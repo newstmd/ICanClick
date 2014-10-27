@@ -3,7 +3,7 @@ var score=0;
 var scoreLabel=null;
 var timeout=0;
 var timeoutLabel=null;
-var isPlaying = 0;
+var isPlaying = 1;
 var PlayScene = cc.Scene.extend({
 	
 	onEnter:function () {
@@ -19,45 +19,63 @@ var PlayScene = cc.Scene.extend({
 		
 		this.restartGame();
 		
-	},
-	addScore:function(){
+		var menu1 = cc.MenuItemImage.create(
+				res.button1_png,
+				res.button2_png,
+				function(){
+					addScore();
+				});
 		
-		if (isPlaying>0) {
-			score += 1;
-			scoreLabel.setString("score:" + score);
-		}
+		menu1.attr({
+			x: 260 ,
+			y: 400,
+			anchorX: 0.5,
+			anchorY: 0.5
+		});
+		var menu = new cc.Menu(menu1);
+		menu.x = 0;
+		menu.y = 0;
+		this.addChild(menu, 1);
 		
-	},
-	subtractTime:function(){
-		timeout -=1;
-		timeoutLabel.setString(timeout);
-	},
-	resetState:function(){
-		score = 0;
-		scoreLabel.setString("score:0");
-		
-		timeout = total;
-		timeoutLabel.setString(total);
 	},
 	restartGame:function(){
 		//清空数据环境
-		this.resetState();
-		
+		resetState();
+
 		//倒计时3秒再开始
-		
+
 		//游戏倒计时开始，每秒全局判断
 		this.schedule(this.gameing,1);
-		
+
+
 	},
 	gameing:function(){
-		this.subtractTime();
-		
-		
+		subtractTime();
+
+
 		if (timeout==0) {//当计时结束时，停止计时器，显示成绩，分享！
 			isPlaying = 0;
 			this.unschedule(this.gameing);
 		}
 	}
-	
-	
+		
 });
+function addScore(){
+	if (isPlaying>0) {
+		score += 1;
+		scoreLabel.setString("score:" + score);
+	}
+}
+function subtractTime(){
+	timeout -=1;
+	timeoutLabel.setString(timeout);
+}
+
+function resetState(){
+	score = 0;
+	scoreLabel.setString("score:0");
+
+	timeout = total;
+	timeoutLabel.setString(total);
+}
+

@@ -31,6 +31,8 @@ var StateLayer = cc.Layer.extend({
 		timeoutLabel.x = 50;
 		timeoutLabel.y = size.height - 40;
 		this.addChild(timeoutLabel, 5);
+		
+		
 
 		return true;
 	}
