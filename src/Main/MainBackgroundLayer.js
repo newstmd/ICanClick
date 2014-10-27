@@ -21,12 +21,15 @@ var MainLayer = cc.Layer.extend({
 				res.CloseNormal_png,
 				res.CloseSelected_png,
 				function () {
-					//cc.log("Menu is clicked!");
-					cc.director.pushScene(new PlayScene());
-				}, this);
+					
+					//cc.director.replaceScene(new PlayScene());
+					cc.director.runScene(new PlayScene());
+
+				});
+			
 		closeItem.attr({
-			x: size.width - 20,
-			y: 20,
+			x: 200,
+			y: 200,
 			anchorX: 0.5,
 			anchorY: 0.5
 		});

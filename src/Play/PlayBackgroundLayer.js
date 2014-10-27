@@ -17,6 +17,9 @@ var PlayBackgroundLayer = cc.Layer.extend({
 		});
 		this.addChild(bgSprite);
 		
+		//this.times = 100;
+		
+		
 		
 		return true;
 	}
