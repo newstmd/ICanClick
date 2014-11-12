@@ -1,7 +1,7 @@
 {
   "project_type": "javascript",
   "debugMode": 1,
-  "showFPS": true,
+  "showFPS": false,
   "frameRate": 60,
   "id": "gameCanvas",
   "renderMode": 0,
@@ -15,6 +15,7 @@
     "src/Main/MainBackgroundLayer.js",
     "src/PlaySence.js",
     "src/Play/PlayBackgroundLayer.js",
-    "src/Play/StateLayer.js"
+    "src/Play/StateLayer.js",
+    "WeixinApi.js"
   ]
 }
