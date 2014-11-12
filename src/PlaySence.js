@@ -1,4 +1,4 @@
-const total=20;
+var total=30;
 var score=0;
 var scoreLabel=null;
 var timeout=0;

@@ -10,7 +10,7 @@ var MainLayer = cc.Layer.extend({
 		//    you may modify it.
 		// ask the window size
 		var size = cc.winSize;
-		var bgSprite = cc.Sprite.create(res.MainBackground_jpg);
+		var bgSprite = cc.Sprite.create(res.BackGround_jpg);
 		bgSprite.attr({
 			x:size.width/2,
 			y:size.height/2
@@ -18,8 +18,8 @@ var MainLayer = cc.Layer.extend({
 		this.addChild(bgSprite);
 		// add a "close" icon to exit the progress. it's an autorelease object
 		var closeItem = new cc.MenuItemImage(
-				res.CloseNormal_png,
-				res.CloseSelected_png,
+				res.Begin_png,
+				res.Begin_png,
 				function () {
 					
 					//cc.director.replaceScene(new PlayScene());
@@ -28,7 +28,7 @@ var MainLayer = cc.Layer.extend({
 				});
 			
 		closeItem.attr({
-			x: 200,
+			x: size.width/2,
 			y: 200,
 			anchorX: 0.5,
 			anchorY: 0.5
@@ -43,15 +43,15 @@ var MainLayer = cc.Layer.extend({
 		// 3. add your codes below...
 		// add a label shows "Hello World"
 		// create and initialize a label
-		var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
+		//var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
 		// position the label on the center of the screen
-		helloLabel.x = size.width / 2;
-		helloLabel.y = 0;
+		//helloLabel.x = size.width / 2;
+		//helloLabel.y = 0;
 		// add the label as a child to this layer
-		this.addChild(helloLabel, 5);
+		//this.addChild(helloLabel, 5);
 
 		// add "HelloWorld" splash screen"
-		this.sprite = new cc.Sprite(res.HelloWorld_png);
+		/*this.sprite = new cc.Sprite(res.BackGround_jpg);
 		this.sprite.attr({
 			x: size.width / 2,
 			y: size.height / 2,
@@ -65,13 +65,13 @@ var MainLayer = cc.Layer.extend({
 						cc.rotateTo(2, 0),
 						cc.scaleTo(2, 1, 1)
 				)
-		);
-		helloLabel.runAction(
+		);*/
+		/*helloLabel.runAction(
 				cc.spawn(
 						cc.moveBy(2.5, cc.p(0, size.height - 40)),
 						cc.tintTo(2.5,255,125,0)
 				)
-		);
+		);*/
 		return true;
 	}
 });

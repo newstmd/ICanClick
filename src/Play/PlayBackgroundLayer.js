@@ -10,7 +10,7 @@ var PlayBackgroundLayer = cc.Layer.extend({
 		//    you may modify it.
 		// ask the window size
 		var size = cc.winSize;
-		var bgSprite = cc.Sprite.create(res.PlayBackground_jpg);
+		var bgSprite = cc.Sprite.create(res.BackGround_jpg);
 		bgSprite.attr({
 			x:size.width/2,
 			y:size.height/2

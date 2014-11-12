@@ -1,11 +1,11 @@
 var res = {
-    HelloWorld_png : "res/HelloWorld.png",
-    CloseNormal_png : "res/CloseNormal.png",
-    CloseSelected_png : "res/CloseSelected.png",
-    MainBackground_jpg:"res/WOODBG.jpg",
-    PlayBackground_jpg:"res/PlayBG.jpg",
-    button1_png:"res/BUTTON1.png",
-    button2_png:"res/BUTTON2.png"
+    
+    Begin_png:"res/begin.png",
+    
+    BackGround_jpg:"res/BG.jpg",
+    
+    button1_png:"res/c1.png",
+    button2_png:"res/c2.png"
 };
 
 var g_resources = [];
