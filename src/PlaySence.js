@@ -4,6 +4,8 @@ var scoreLabel=null;
 var timeout=0;
 var timeoutLabel=null;
 var isPlaying = 1;
+var menu = null;
+var again = null;
 var PlayScene = cc.Scene.extend({
 	
 	onEnter:function () {
@@ -32,15 +34,18 @@ var PlayScene = cc.Scene.extend({
 			anchorX: 0.5,
 			anchorY: 0.5
 		});
-		var menu = new cc.Menu(menu1);
+		menu = new cc.Menu(menu1);
 		menu.x = 0;
 		menu.y = 0;
 		this.addChild(menu, 1);
+		
+		
 		
 	},
 	restartGame:function(){
 		//清空数据环境
 		resetState();
+		
 
 		//倒计时3秒再开始
 
@@ -55,7 +60,9 @@ var PlayScene = cc.Scene.extend({
 
 		if (timeout==0) {//当计时结束时，停止计时器，显示成绩，分享！
 			isPlaying = 0;
-			this.unschedule(this.gameing);
+			menu.setEnabled(false);
+			this.unschedule(this.gameing); 
+			
 		}
 	}
 		

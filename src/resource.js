@@ -5,7 +5,10 @@ var res = {
     BackGround_jpg:"res/BG.jpg",
     
     button1_png:"res/c1.png",
-    button2_png:"res/c2.png"
+    button2_png:"res/c2.png",
+    title_png:"res/zy.png",
+    again_png:"res/again.png",
+    share_png:"res/share.png"
 };
 
 var g_resources = [];

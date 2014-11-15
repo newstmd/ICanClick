@@ -10,13 +10,20 @@ var MainLayer = cc.Layer.extend({
 		//    you may modify it.
 		// ask the window size
 		var size = cc.winSize;
+		//add title
+		var title = cc.Sprite.create(res.title_png);
+		title.x = size.width/2;
+		title.y = size.height/2;
+		this.addChild(title,5);
+		
+		
 		var bgSprite = cc.Sprite.create(res.BackGround_jpg);
 		bgSprite.attr({
 			x:size.width/2,
 			y:size.height/2
 		});
-		this.addChild(bgSprite);
-		// add a "close" icon to exit the progress. it's an autorelease object
+		this.addChild(bgSprite,0);
+		// add a button
 		var closeItem = new cc.MenuItemImage(
 				res.Begin_png,
 				res.Begin_png,
@@ -29,15 +36,26 @@ var MainLayer = cc.Layer.extend({
 			
 		closeItem.attr({
 			x: size.width/2,
-			y: 200,
+			y: 180,
 			anchorX: 0.5,
 			anchorY: 0.5
 		});
 
-		var menu = new cc.Menu(closeItem);
+		var menu = new cc.Menu(closeItem); 
+		//menu.addChild();
 		menu.x = 0;
 		menu.y = 0;
-		this.addChild(menu, 1);
+		this.addChild(menu, 5);
+		
+		//文字介绍介绍
+		var jieshao = cc.LabelTTF.create();
+		jieshao.setString("最新\"减压\"小游戏\n看你30秒能戳她多少次？\n不要戳坏你的小屏幕哟！"); 
+		jieshao.x = size.width /2;
+		jieshao.y = 350;
+		jieshao.setFontSize(30);
+		//jieshao._lineWidths = 500;
+		jieshao.setHorizontalAlignment(cc.TEXT_ALIGNMENT_LEFT);
+		this.addChild(jieshao,5);
 
 		/////////////////////////////
 		// 3. add your codes below...
