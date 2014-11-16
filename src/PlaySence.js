@@ -1,9 +1,9 @@
-var total=3;
+var total=30;
 var score=0;
 var scoreLabel=null;
 var timeout=0;
 var timeoutLabel=null;
-var isPlaying = 1;
+//var isPlaying = 1;
 var menu = null;
 var again = null;
 var PlayScene = cc.Scene.extend({
@@ -11,7 +11,7 @@ var PlayScene = cc.Scene.extend({
 	onEnter:function () {
 		
 		this._super();
-		
+		var size = cc.winSize;
 		
 		var bglayer = new PlayBackgroundLayer();
 		this.addChild(bglayer);
@@ -29,7 +29,7 @@ var PlayScene = cc.Scene.extend({
 				});
 		
 		menu1.attr({
-			x: 260 ,
+			x:size.width/2 ,
 			y: 400,
 			anchorX: 0.5,
 			anchorY: 0.5
@@ -59,23 +59,25 @@ var PlayScene = cc.Scene.extend({
 
 
 		if (timeout==0) {//当计时结束时，停止计时器，显示成绩，分享！
-			isPlaying = 0;
+			//isPlaying = 0;
 			menu.setEnabled(false);
 			this.unschedule(this.gameing); 
+			
 			//显示结果界面
-			var end = new endLayer();
-			end.setTag(9988);
-			this.addChild(end,10);
+			//var end = new endLayer();
+			//end.setTag(9988);
+			//this.addChild(end,10);
+			cc.director.runScene(new endSence());
 			
 		}
 	}
 		
 });
 function addScore(){
-	if (isPlaying>0) {
+	
 		score += 1;
 		scoreLabel.setString("score:" + score);
-	}
+	
 }
 function subtractTime(){
 	timeout -=1;

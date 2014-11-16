@@ -8,7 +8,9 @@ var res = {
     button2_png:"res/c2.png",
     title_png:"res/zy.png",
     again_png:"res/again.png",
-    share_png:"res/share.png"
+    share_png:"res/share.png",
+    arrow_png:"res/arrow.png",
+    heiban_png:"res/heiban.png"
 };
 
 var g_resources = [];

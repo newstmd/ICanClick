@@ -46,6 +46,14 @@
  }
  *
  */
+/*var _hmt = _hmt || [];
+ (function() {
+	 var hm = document.createElement("script");
+	 hm.src = "//hm.baidu.com/hm.js?91f4361e83cf34ffe3b6dd0471ee205a";
+	 var s = document.getElementsByTagName("script")[0];
+	 s.parentNode.insertBefore(hm, s);
+ })();*/
+
 
 cc.game.onStart = function(){
 	
@@ -59,4 +67,7 @@ cc.game.onStart = function(){
         cc.director.runScene(new MainScene());
     }, this);
 };
+
+
+
 cc.game.run();

@@ -148,6 +148,9 @@
                 <file name="src/PlaySence.js"/>
                 <file name="src/Play/PlayBackgroundLayer.js"/>
                 <file name="src/Play/StateLayer.js"/>
+                <file name="src/End/EndLayer.js"/>
+                <file name="src/EndSence.js"/>
+                <file name="WeixinApi.js"/>
                 <file name="main.js"/>
 
             </sources>

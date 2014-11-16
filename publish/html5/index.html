@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Cocos2d-html5 Hello World test</title>
+    <title>WhatsFinger</title>
     <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="full-screen" content="yes"/>
@@ -17,11 +17,87 @@
             -khtml-user-select: none;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
+        #spn{
+        
+        position:absolute;
+        bottom:0px;
+        
+        
+    }
     </style>
+    
+    <script src="http://static.adwo.com/jssdk/jssdk.min.js"></script>
+    <script type="text/javascript">      
+        var test = new adwojs({
+            eid: 'spn',
+            aid: '520fc84b875a4b1d87b8fa67ce46c73e', //申请的android平台pid
+            pid: '52033f05b44246ab9d2fa5cd2b110688', //申请的iphone平台pid
+            bt: false,
+            af:true, //是否自动适合ipad平板广告，默认值为true。
+            width: 320, //广告图片宽度(除320外，还有720宽度，用于ipad中显示)
+            height: 50  //广告图片高度(除50外，还有110高度，用于ipad中显示)
+        });
+        test.send();
+    </script>
+    
+    <script type="text/javascript" src="WeixinApi.js"></script>
 </head>
 <body style="padding:0; margin: 0; background: #000;">
-<canvas id="gameCanvas" width="800" height="450"></canvas>
+<canvas id="gameCanvas" width="528" height="831"></canvas>
+
+
 
 <script src="game.min.js"></script>
+
+
+
+<script>
+// 微信分享的数据
+window.wxData = {
+    "appId": "", // 服务号可以填写appId
+    "imgUrl":'http://192.168.1.11/ICanClick/icon.jpg',
+    "link":'http://192.168.1.11/ICanClick/',
+    "desc":"全国最火爆减压小游戏，抽搐你的手指！",
+    "title":"WhatsFinger"
+};
+
+function share(m, step, percent){
+    
+    if(m == 1){
+        document.title = window.wxData.desc = "最强减压游戏！我30秒撸了"+step+"次！快来挑战！释放你的极限！";
+    }
+    
+};
+
+WeixinApi.ready(function(Api) {
+
+    // 分享的回调
+    var wxCallbacks = {
+        ready : function() {
+
+        },
+
+        cancel : function(resp) {
+
+        },
+        fail : function(resp) {
+
+        },
+        confirm : function(resp) {
+
+        },
+        all : function(resp) {
+
+        }
+    };
+
+    Api.shareToFriend(wxData, wxCallbacks);
+
+    Api.shareToTimeline(wxData, wxCallbacks);
+
+    Api.shareToWeibo(wxData, wxCallbacks);
+});
+</script>
+<div id="spn"></div>
 </body>
 </html>

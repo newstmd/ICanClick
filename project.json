@@ -17,6 +17,7 @@
     "src/Play/PlayBackgroundLayer.js",
     "src/Play/StateLayer.js",
     "src/End/EndLayer.js",
+    "src/EndSence.js",
     "WeixinApi.js"
   ]
 }
