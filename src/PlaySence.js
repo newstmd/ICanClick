@@ -1,4 +1,4 @@
-var total=30;
+var total=3;
 var score=0;
 var scoreLabel=null;
 var timeout=0;
@@ -62,6 +62,10 @@ var PlayScene = cc.Scene.extend({
 			isPlaying = 0;
 			menu.setEnabled(false);
 			this.unschedule(this.gameing); 
+			//显示结果界面
+			var end = new endLayer();
+			end.setTag(9988);
+			this.addChild(end,10);
 			
 		}
 	}
@@ -85,4 +89,5 @@ function resetState(){
 	timeout = total;
 	timeoutLabel.setString(total);
 }
+
 

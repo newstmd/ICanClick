@@ -13,7 +13,7 @@ var MainLayer = cc.Layer.extend({
 		//add title
 		var title = cc.Sprite.create(res.title_png);
 		title.x = size.width/2;
-		title.y = size.height/2;
+		title.y = size.height/2+50;
 		this.addChild(title,5);
 		
 		
@@ -23,7 +23,7 @@ var MainLayer = cc.Layer.extend({
 			y:size.height/2
 		});
 		this.addChild(bgSprite,0);
-		// add a button
+		// add a button开始游戏按钮
 		var closeItem = new cc.MenuItemImage(
 				res.Begin_png,
 				res.Begin_png,

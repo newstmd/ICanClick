@@ -17,12 +17,33 @@
             -khtml-user-select: none;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
+        #spn{
+        
+        position:absolute;
+        bottom:0px;
+        
+        
+    }
     </style>
+    
+    <script src="http://static.adwo.com/jssdk/jssdk.min.js"></script>
+    <script type="text/javascript">      
+        var test = new adwojs({
+            eid: 'spn',
+            aid: '520fc84b875a4b1d87b8fa67ce46c73e', //申请的android平台pid
+            pid: '52033f05b44246ab9d2fa5cd2b110688', //申请的iphone平台pid
+            bt: false,
+            af:true, //是否自动适合ipad平板广告，默认值为true。
+            width: 320, //广告图片宽度(除320外，还有720宽度，用于ipad中显示)
+            height: 50  //广告图片高度(除50外，还有110高度，用于ipad中显示)
+        });
+        test.send();
+    </script>
     
     <script type="text/javascript" src="WeixinApi.js"></script>
 </head>
 <body style="padding:0; margin: 0; background: #000;">
-<canvas id="gameCanvas" width="800" height="450"></canvas>
+<canvas id="gameCanvas" width="528" height="831"></canvas>
 <script src="frameworks/cocos2d-html5/CCBoot.js"></script>
 <script src="main.js"></script>
 <script type="text/javascript">
@@ -38,5 +59,7 @@
                     };
                     }
 </script>
+
+<div id="spn"></div>
 </body>
 </html>
